@@ -11,6 +11,7 @@ import MapKit
 struct LandmarkDetail: View {
     @EnvironmentObject var modelData: ModelData
     var landmark: Landmark
+    @State private var showingSheet = false
 
     var landmarkIndex: Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
@@ -50,6 +51,15 @@ struct LandmarkDetail: View {
                         }
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                        
+                        Button {
+                            withAnimation {
+                                showingSheet.toggle()
+                            }
+                        } label: {
+                            Label("Buy NFT", systemImage: "dollarsign.circle")
+                                .padding()
+                        }
                     }
                 }
 
@@ -64,6 +74,10 @@ struct LandmarkDetail: View {
             .offset(y: -50)
         }
         .navigationTitle(landmark.name)
+        .sheet(isPresented: $showingSheet) {
+            PurchaseSheet(showingSheet: $showingSheet, park: landmark)
+            .frame(width: 400, height: 600, alignment: .center)
+        }
     }
 }
 

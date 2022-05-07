@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0E88040D2826930B007CB9BB /* LogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040C2826930B007CB9BB /* LogStorage.swift */; };
 		0E88040E2826930B007CB9BB /* LogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040C2826930B007CB9BB /* LogStorage.swift */; };
+		0E8804102826C63B007CB9BB /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040F2826C63B007CB9BB /* BadgeView.swift */; };
+		0E8804112826C63B007CB9BB /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040F2826C63B007CB9BB /* BadgeView.swift */; };
+		0E8804132826CC98007CB9BB /* PurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8804122826CC98007CB9BB /* PurchaseSheet.swift */; };
+		0E8804142826CC98007CB9BB /* PurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8804122826CC98007CB9BB /* PurchaseSheet.swift */; };
 		C20D77EE24B665D7002E7AEA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		C20D77F024B665D7002E7AEA /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */; };
 		C20D77F224B665D8002E7AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20D77F124B665D8002E7AEA /* Assets.xcassets */; };
@@ -74,6 +78,8 @@
 /* Begin PBXFileReference section */
 		0CAE93146B301442691B6873 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		0E88040C2826930B007CB9BB /* LogStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogStorage.swift; sourceTree = "<group>"; };
+		0E88040F2826C63B007CB9BB /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		0E8804122826CC98007CB9BB /* PurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSheet.swift; sourceTree = "<group>"; };
 		B4EC3D429023D9271D0BF24A /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		C20D77EA24B665D7002E7AEA /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				C20D77FC24B668F4002E7AEA /* CircleImage.swift */,
+				0E88040F2826C63B007CB9BB /* BadgeView.swift */,
 				C20D77FE24B67FB3002E7AEA /* MapView.swift */,
 				C217016D24BD266600E18218 /* FavoriteButton.swift */,
 			);
@@ -280,6 +287,7 @@
 				C20D780A24B68B4D002E7AEA /* LandmarkList.swift */,
 				C20D780024B6846F002E7AEA /* LandmarkRow.swift */,
 				C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */,
+				0E8804122826CC98007CB9BB /* PurchaseSheet.swift */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
@@ -432,6 +440,8 @@
 				C20D781B24B6CC68002E7AEA /* HikeView.swift in Sources */,
 				C20D780324B684BD002E7AEA /* Landmark.swift in Sources */,
 				C20D782424B6CD23002E7AEA /* GraphCapsule.swift in Sources */,
+				0E8804102826C63B007CB9BB /* BadgeView.swift in Sources */,
+				0E8804132826CC98007CB9BB /* PurchaseSheet.swift in Sources */,
 				C20D781D24B6CCA4002E7AEA /* HikeDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,8 +456,10 @@
 				C217017024BD266600E18218 /* FavoriteButton.swift in Sources */,
 				C2D89E7124B9358D0096C79B /* Profile.swift in Sources */,
 				C2D89E7A24B9383B0096C79B /* MapView.swift in Sources */,
+				0E8804142826CC98007CB9BB /* PurchaseSheet.swift in Sources */,
 				C2D89E6324B935390096C79B /* ContentView.swift in Sources */,
 				C2D89E6E24B9358D0096C79B /* ModelData.swift in Sources */,
+				0E8804112826C63B007CB9BB /* BadgeView.swift in Sources */,
 				C28E34FA24BFC7E4009B28D9 /* LandmarkCommands.swift in Sources */,
 				0E88040E2826930B007CB9BB /* LogStorage.swift in Sources */,
 				C2D89E7624B9380B0096C79B /* LandmarkRow.swift in Sources */,
