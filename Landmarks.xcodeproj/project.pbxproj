@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E88040D2826930B007CB9BB /* LogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040C2826930B007CB9BB /* LogStorage.swift */; };
+		0E88040E2826930B007CB9BB /* LogStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88040C2826930B007CB9BB /* LogStorage.swift */; };
 		C20D77EE24B665D7002E7AEA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		C20D77F024B665D7002E7AEA /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */; };
 		C20D77F224B665D8002E7AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20D77F124B665D8002E7AEA /* Assets.xcassets */; };
@@ -71,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		0CAE93146B301442691B6873 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		0E88040C2826930B007CB9BB /* LogStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogStorage.swift; sourceTree = "<group>"; };
 		B4EC3D429023D9271D0BF24A /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		C20D77EA24B665D7002E7AEA /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */,
+				0E88040C2826930B007CB9BB /* LogStorage.swift */,
 				C2FEB32D24B7C802004FAB73 /* Views */,
 				C20D780824B685C4002E7AEA /* Model */,
 				C20D780924B685CB002E7AEA /* Resources */,
@@ -408,6 +412,7 @@
 				C20D782224B6CD01002E7AEA /* HikeGraph.swift in Sources */,
 				C2FEB34924B7E65A004FAB73 /* FeatureCard.swift in Sources */,
 				C2FEB32A24B7B649004FAB73 /* CategoryRow.swift in Sources */,
+				0E88040D2826930B007CB9BB /* LogStorage.swift in Sources */,
 				C2FEB33D24B7CD01004FAB73 /* Profile.swift in Sources */,
 				C215675D24F591CA0059131E /* LandmarkCommands.swift in Sources */,
 				C2FEB34524B7E582004FAB73 /* PageViewController.swift in Sources */,
@@ -444,6 +449,7 @@
 				C2D89E6324B935390096C79B /* ContentView.swift in Sources */,
 				C2D89E6E24B9358D0096C79B /* ModelData.swift in Sources */,
 				C28E34FA24BFC7E4009B28D9 /* LandmarkCommands.swift in Sources */,
+				0E88040E2826930B007CB9BB /* LogStorage.swift in Sources */,
 				C2D89E7624B9380B0096C79B /* LandmarkRow.swift in Sources */,
 				C2DAE04624C9151400C79AED /* LandmarkList.swift in Sources */,
 				C217017224BD2CED00E18218 /* LandmarkSettings.swift in Sources */,

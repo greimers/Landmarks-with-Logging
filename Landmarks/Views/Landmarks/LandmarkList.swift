@@ -6,6 +6,7 @@ A view showing a list of landmarks.
 */
 
 import SwiftUI
+import os
 
 struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
@@ -13,6 +14,9 @@ struct LandmarkList: View {
     @State private var filter = FilterCategory.all
     @State private var selectedLandmark: Landmark?
 
+    private var log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "LandmarkList")
+    
+    
     enum FilterCategory: String, CaseIterable, Identifiable {
         case all = "All"
         case lakes = "Lakes"
@@ -67,6 +71,22 @@ struct LandmarkList: View {
                         }
                     } label: {
                         Label("Filter", systemImage: "slider.horizontal.3")
+                    }
+                }
+                
+                ToolbarItem {
+                    Button {
+                        let logStorage = LogStorage()
+                        let entries = logStorage.loadLogEntriesAsText()
+                        guard let logURL = logStorage.saveToTempFolder(content: entries) else {
+                            log.error("Cloud not save log")
+                            return
+                        }
+                        logStorage.showSaveSheet(forFile: logURL)
+                        
+                    } label: {
+                        Label("Expor Log", systemImage: "square.and.arrow.up")
+                            .help("Export Log")
                     }
                 }
             }
