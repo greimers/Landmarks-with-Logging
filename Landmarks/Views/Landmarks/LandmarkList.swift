@@ -27,14 +27,18 @@ struct LandmarkList: View {
     }
 
     var filteredLandmarks: [Landmark] {
-        modelData.landmarks.filter { landmark in
+        let filtered = modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
                 && (filter == .all || filter.rawValue == landmark.category.rawValue)
         }
+        log.debug("Filtered landmarks: \(filtered.count, align: .left(columns: 2))")
+
+        return filtered
     }
 
     var title: String {
         let title = filter == .all ? "Landmarks" : filter.rawValue
+        log.debug("Navigation title: \(title, privacy: .public)")
         return showFavoritesOnly ? "Favorite \(title)" : title
     }
 

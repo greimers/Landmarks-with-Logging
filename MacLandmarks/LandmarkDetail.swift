@@ -7,12 +7,19 @@ A view showing the details for a landmark.
 
 import SwiftUI
 import MapKit
+import os
 
 struct LandmarkDetail: View {
+    
+    var log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "LandmarkDetail")
+
     @EnvironmentObject var modelData: ModelData
     var landmark: Landmark
     @State private var showingSheet = false
 
+    @State private var showMeTheMoney = false
+
+    
     var landmarkIndex: Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
@@ -52,13 +59,16 @@ struct LandmarkDetail: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         
-                        Button {
-                            withAnimation {
-                                showingSheet.toggle()
+                        if showMeTheMoney {
+                            Button {
+                                log.debug("Buy button clicked")
+                                withAnimation {
+                                    showingSheet.toggle()
+                                }
+                            } label: {
+                                Label("Buy NFT", systemImage: "dollarsign.circle")
+                                    .padding()
                             }
-                        } label: {
-                            Label("Buy NFT", systemImage: "dollarsign.circle")
-                                .padding()
                         }
                     }
                 }
@@ -77,6 +87,9 @@ struct LandmarkDetail: View {
         .sheet(isPresented: $showingSheet) {
             PurchaseSheet(showingSheet: $showingSheet, park: landmark)
             .frame(width: 400, height: 600, alignment: .center)
+        }
+        .onAppear {
+            log.notice("Showing \(landmark.name)")
         }
     }
 }

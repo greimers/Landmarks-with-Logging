@@ -6,8 +6,12 @@ A view showing the details for a landmark.
 */
 
 import SwiftUI
+import os
 
 struct LandmarkDetail: View {
+    
+    var log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "LandmarkDetail")
+
     @EnvironmentObject var modelData: ModelData
     var landmark: Landmark
 
@@ -50,6 +54,9 @@ struct LandmarkDetail: View {
         }
         .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            log.notice("Showing \(landmark.name)")
+        }
     }
 }
 

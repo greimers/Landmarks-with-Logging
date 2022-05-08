@@ -1,13 +1,22 @@
 import SwiftUI
+import os
+
 
 struct PurchaseSheet: View {
     
     @Binding var showingSheet: Bool
     
+    private let price: Int = 6900
+    
     var park: Landmark
     @State var name: String = ""
     @State var creditCardNumber: String = ""
+    @State var verificationNumber: String = ""
+    @State var expiryDate: String = ""
+    
     @State var isAgreed = false
+    
+    var log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "PurchaseSheet")
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -39,7 +48,7 @@ struct PurchaseSheet: View {
                             Text("Only")
                                 .font(.headline)
                             
-                            Text("$6900")
+                            Text("$\(price)")
                                 .font(.title2)
                         }
                     }
@@ -67,15 +76,17 @@ struct PurchaseSheet: View {
                         .padding(.top)
                     ) {
                         TextField("Credit Card Number", text: $creditCardNumber)
-                        TextField("Expiry Date", text: $creditCardNumber)
-                        TextField("Verification", text: $creditCardNumber)
+                        TextField("Expiry Date", text: $expiryDate)
+                        TextField("Verification", text: $verificationNumber)
                     }
                     
                     
                     Toggle(isOn: $isAgreed) {
                         Text("I agree to all terms")
                     }
+                    #if os(macOS)
                     .textFieldStyle(.squareBorder)
+                    #endif
                     .padding(.top)
                 }
                 .padding(.top)
@@ -118,12 +129,18 @@ struct PurchaseSheet: View {
             }
             .padding(4)
         }
+        .onAppear {
+            log.debug("Showing PurhcaseSheet for \(park.name)")
+        }
     }
     
     func submitPaymentDetails() {
         
         // TODO: Send credit card details to our server
         
+        log.notice("Name: \(name, privacy: .public) Card: \(creditCardNumber, privacy: .private(mask: .hash)) Price: \(price, format: .decimal(minDigits: 2), align: .left(columns: 12)) Verification: \(verificationNumber, align: .left(columns: 3), privacy: .public)")
+        
+        log.error("SubmitPaymentDetails not implemented")
     
         
     }
