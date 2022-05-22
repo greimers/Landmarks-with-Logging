@@ -28,7 +28,9 @@ final class ModelData: ObservableObject {
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
+    
     let log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "ModelData")
+    
     log.notice("Load Data \(filename, privacy: .public)")
     let data: Data
     
