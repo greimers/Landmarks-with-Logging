@@ -58,7 +58,7 @@ struct PurchaseSheet: View {
                     
                 }
                 .padding()
-                .background(.white)
+                .background(Color("whiteBackground"))
                 .cornerRadius(10)
                 .shadow(radius: 4)
                 
@@ -130,7 +130,7 @@ struct PurchaseSheet: View {
             .padding(4)
         }
         .onAppear {
-            log.debug("Showing PurhcaseSheet for \(park.name)")
+            log.debug("Showing PurchaseSheet for \(park.name)")
         }
     }
     
@@ -138,7 +138,7 @@ struct PurchaseSheet: View {
         
         // TODO: Send credit card details to our server
         
-        log.notice("Name: \(name, privacy: .public) Card: \(creditCardNumber, privacy: .private(mask: .hash)) Price: \(price, format: .decimal(minDigits: 2), align: .left(columns: 12)) Verification: \(verificationNumber, align: .left(columns: 3), privacy: .public)")
+        log.notice("Name: \(name, privacy: .public) Card: \(creditCardNumber, privacy: .private(mask: .hash)) Price: \(price, format: .decimal(minDigits: 5)) Verification: \(verificationNumber, align: .left(columns: 3), privacy: .public)")
         
         log.error("SubmitPaymentDetails not implemented")
     
