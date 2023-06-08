@@ -1,18 +1,14 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view showing featured landmarks above a list of all of the landmarks.
-*/
-
 import SwiftUI
 
+/// A view showing featured landmarks above a list of all of the landmarks.
 struct ContentView: View {
+
     @State private var selection: Tab = .featured
 
-    enum Tab {
-        case featured
-        case list
+    /// Enum for the the tabs in the main view
+    enum Tab: Int {
+        case featured = 1
+        case list = 2
     }
 
     var body: some View {

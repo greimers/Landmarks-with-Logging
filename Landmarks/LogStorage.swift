@@ -8,6 +8,8 @@ import AppKit
 import UIKit
 #endif
 
+
+/// Helper to extract and store the logging data.
 struct LogStorage {
     
     let log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "LogStorage")
@@ -48,7 +50,11 @@ struct LogStorage {
         }
         return logFileURL
     }
-    
+
+    /// Retrieves all logs for the last 24 hours and combines them into a
+    /// string that can be stored or exported.
+    ///
+    /// - Returns: Human readable logs
     func loadLogEntriesAsText() -> String {
         // Article on OSLog:
         // https://steipete.com/posts/logging-in-swift/#update-ios-15

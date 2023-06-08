@@ -1,13 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view showing a list of landmarks.
-*/
-
 import SwiftUI
 import os
 
+/// A view showing a list of landmarks.
 struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
@@ -15,32 +9,34 @@ struct LandmarkList: View {
     @State private var selectedLandmark: Landmark?
 
     private var log = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "LandmarkList")
-    
-    
+
+    /// Enum for the different categories that can be filtered for
     enum FilterCategory: String, CaseIterable, Identifiable {
         case all = "All"
         case lakes = "Lakes"
         case rivers = "Rivers"
         case mountains = "Mountains"
-
         var id: FilterCategory { self }
     }
 
+    /// The title to display in the navigation view depending on which filter is selected
+    var title: String {
+        let title = filter == .all ? "Landmarks" : filter.rawValue
+        log.debug("Navigation title: \(title, privacy: .public)")
+        return showFavoritesOnly ? "Favorite \(title)" : title
+    }
+
+    /// Filters the landmarks list according to the properties set in the filter.
     var filteredLandmarks: [Landmark] {
         let filtered = modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
                 && (filter == .all || filter.rawValue == landmark.category.rawValue)
         }
         log.debug("Filtered landmarks: \(filtered.count, align: .left(columns: 2))")
-
         return filtered
     }
 
-    var title: String {
-        let title = filter == .all ? "Landmarks" : filter.rawValue
-        log.debug("Navigation title: \(title, privacy: .public)")
-        return showFavoritesOnly ? "Favorite \(title)" : title
-    }
+
 
     var index: Int? {
         modelData.landmarks.firstIndex(where: { $0.id == selectedLandmark?.id })
